@@ -2,22 +2,47 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>TRACK.966</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRACK.966 | التصوير السينمائي</title>
     <style>
-        /* الخلفية سوداء والنص أبيض لضمان الوضوح */
-        body { 
-            background-color: #000; 
-            color: #fff; 
-            text-align: center; 
-            font-family: Arial, sans-serif; 
-            padding-top: 100px; 
-        }
-        h1 { color: #ff0000; font-size: 3rem; }
+        body { background-color: #000; color: #fff; font-family: 'Segoe UI', sans-serif; margin: 0; text-align: center; }
+        header { padding: 60px 20px; border-bottom: 2px solid #ff0000; }
+        h1 { font-size: 3.5rem; color: #ff0000; margin-bottom: 10px; }
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 40px; }
+        .gallery img { width: 100%; height: 250px; object-fit: cover; border-radius: 8px; border: 1px solid #333; }
+        .order-section { background: #111; padding: 40px; margin: 20px; border-radius: 15px; }
+        input, textarea { width: 80%; max-width: 400px; padding: 15px; margin: 10px 0; border-radius: 8px; border: none; background: #222; color: #fff; }
+        button { background: #25d366; color: #fff; padding: 15px 30px; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 1rem; }
     </style>
 </head>
 <body>
-    <h1>TRACK.966</h1>
-    <p>الموقع يعمل بنجاح — جارٍ تجهيز معرض الأعمال</p>
+
+    <header>
+        <h1>TRACK.966</h1>
+        <p>احترافية التصوير السينمائي - توثيق لحظاتك بشغف</p>
+    </header>
+
+    <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d" alt="تصوير سيارات">
+        <img src="https://images.unsplash.com/photo-1541167760496-1628856ab77a" alt="تصوير سينمائي">
+        <img src="https://images.unsplash.com/photo-1502877338535-7de6e10daa85" alt="تصوير كافيه">
+    </div>
+
+    <div class="order-section">
+        <h2>اطلب جلستك الآن</h2>
+        <input type="text" id="name" placeholder="اسمك الكريم">
+        <textarea id="details" placeholder="نوع الجلسة (سيارات/قهوة/فيديو)"></textarea>
+        <br>
+        <button onclick="sendToWhatsApp()">إرسال الطلب عبر واتساب</button>
+    </div>
+
+    <script>
+        function sendToWhatsApp() {
+            var name = document.getElementById("name").value;
+            var details = document.getElementById("details").value;
+            var url = "https://wa.me/966592640902?text=مرحباً، اسمي " + name + " وأريد حجز جلسة. تفاصيل الطلب: " + details;
+            window.open(url, '_blank');
+        }
+    </script>
 </body>
 </html>
-    
